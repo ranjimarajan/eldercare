@@ -1,0 +1,185 @@
+.Main_workshop_seminar_list {
+    width: 95%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+  }
+  
+  .Main_workshop_seminar_list h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2d3748;
+  }
+  
+  .tab-container {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .tab:hover {
+    background-color: #f7fafc;
+  }
+  
+  .tab.active {
+    border-bottom: 2px solid #4299e1;
+    color: #4299e1;
+  }
+  
+  .filters-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .search-container {
+    flex: 1;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .status-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .status-filter select {
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .refresh-button {
+    background-color: #4299e1;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .refresh-button:hover {
+    background-color: #3182ce;
+  }
+  
+  .refresh-button:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  .events-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .events-table th, 
+  .events-table td {
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .events-table th {
+    background-color: #f7fafc;
+    color: #4a5568;
+    font-weight: 600;
+  }
+  
+  .events-table tr:nth-child(even) {
+    background-color: #f9fafb;
+  }
+  
+  .events-table tr:hover {
+    background-color: #ebf4ff;
+  }
+  
+  .status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .status-badge.upcoming {
+    background-color: #ebf8ff;
+    color: #3182ce;
+  }
+  
+  .status-badge.ongoing {
+    background-color: #e6fffa;
+    color: #2c7a7b;
+  }
+  
+  .status-badge.completed {
+    background-color: #f0fff4;
+    color: #2f855a;
+  }
+  
+  .status-badge.cancelled {
+    background-color: #fff5f5;
+    color: #c53030;
+  }
+  
+  .status-badge.postponed {
+    background-color: #fffaf0;
+    color: #c05621;
+  }
+  
+  .status-select {
+    padding: 6px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .no-data {
+    text-align: center;
+    padding: 40px;
+    color: #718096;
+    font-style: italic;
+  }
+  
+  @media (max-width: 992px) {
+    .filters-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .search-container, .status-filter, .refresh-button {
+      width: 100%;
+    }
+    
+    .status-filter {
+      justify-content: space-between;
+    }
+  }

@@ -1,0 +1,210 @@
+/* Add these styles to your DLogin.css file */
+
+.mainLoginPage {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnDiv {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px 0;
+}
+.careGiverLogin{
+  width: 400px;
+  height: 100px;
+}
+.Gobtn{
+  width: 190px;
+  height: 50px;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.careGiverLogin a{
+  text-decoration: none;
+  color: #333;
+  font-size: 2rem;
+}
+.btnDiv button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.btnDiv button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.loginContainer {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.leftside {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftside img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.rightside {
+  flex: 1;
+  max-width: 450px;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rightside h1 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.radiogroup {
+  margin-bottom: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.radiobutton {
+  flex: 1;
+  text-align: center;
+}
+
+.Profileimg {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.Profileimg img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #f0f0f0;
+  object-fit: cover;
+}
+
+form {
+  width: 100%;
+}
+
+form h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #3a80d2;
+}
+
+form p {
+  margin-top: 15px;
+  color: #666;
+  text-align: center;
+}
+
+form span {
+  color: #4a90e2;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+form span:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .loginContainer {
+    flex-direction: column;
+  }
+  
+  .leftside {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .rightside {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .btnDiv {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btnDiv button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .rightside {
+    padding: 30px 20px;
+  }
+}

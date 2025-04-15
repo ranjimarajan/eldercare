@@ -1,0 +1,212 @@
+/* Main Container */
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Content after sidebar */
+.AfterSideBar {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+/* Main Profile Container */
+.mainProfile {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Profile First Box */
+.firstBox {
+  background-color: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileFirstDiv {
+  width: 100%;
+}
+
+.firstBox img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #f0f0f0;
+  margin-bottom: 15px;
+}
+
+.firstBox hr {
+  width: 100%;
+  margin: 15px 0;
+  border: none;
+  border-top: 1px solid #e1e4e8;
+}
+
+/* Second Box Layout */
+.secondBox {
+  display: flex;
+  gap: 25px;
+  width: 100%;
+}
+
+.subFirstBox, .subSecondBox {
+  flex: 1;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+}
+
+/* Box Headers */
+.subFirstBox h2, .subSecondBox h2 {
+  color: #2c3e50;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Single Item Divs */
+.singleItemDiv {
+  display: flex;
+  align-items: center;
+  padding: 12px 5px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
+}
+
+.singleItemDiv:last-child {
+  border-bottom: none;
+}
+
+.singleItemDiv:hover {
+  background-color: #f8fafb;
+  transform: translateX(5px);
+}
+
+.singleDivIcons {
+  font-size: 20px;
+  color: #3498db;
+  margin-right: 15px;
+  min-width: 24px;
+}
+
+.subSecondBox .singleDivIcons {
+  color: #2ecc71;
+}
+
+.singleItemDiv p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  flex: 1;
+}
+
+/* Edit Button */
+.singleItemDiv button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.singleItemDiv button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Form */
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputForm input, .inputForm select {
+  padding: 12px 15px;
+  border-radius: 6px;
+  border: 1px solid #e1e4e8;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+
+.inputForm input:focus, .inputForm select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .secondBox {
+    flex-direction: column;
+  }
+  
+  .subFirstBox, .subSecondBox {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .AfterSideBar {
+    padding: 15px;
+  }
+  
+  .firstBox img {
+    height: 120px;
+    width: 120px;
+  }
+  
+  .singleItemDiv {
+    padding: 10px 5px;
+  }
+  
+  .singleDivIcons {
+    font-size: 18px;
+  }
+  
+  .singleItemDiv p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .firstBox img {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .subFirstBox h2, .subSecondBox h2 {
+    font-size: 18px;
+  }
+  
+  .singleItemDiv button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}

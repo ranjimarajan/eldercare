@@ -1,0 +1,138 @@
+/* Task Listing Table Styles */
+
+.task-list-container {
+    padding: 24px;
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-list-heading {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #2c5282;
+  }
+  
+  .no-tasks-message {
+    text-align: center;
+    padding: 32px;
+    font-size: 20px;
+    color: #718096;
+    background-color: #f7fafc;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e0;
+  }
+  
+  .task-table-container {
+    overflow-x: auto;
+  }
+  
+  .task-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 18px;
+  }
+  
+  .task-table th,
+  .task-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .task-table th {
+    background-color: #f7fafc;
+    font-weight: bold;
+    color: #4a5568;
+  }
+  
+  .task-table tbody tr:hover {
+    background-color: #f7fafc;
+  }
+  
+  .task-checkbox {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  
+  .task-name-cell {
+    min-width: 200px;
+  }
+  
+  .task-name {
+    font-weight: 500;
+  }
+  
+  .task-notes {
+    font-size: 14px;
+    color: #718096;
+    margin-top: 4px;
+  }
+  
+  .task-completed {
+    background-color: #f0fff4;
+  }
+  
+  .task-completed .task-name {
+    text-decoration: line-through;
+    color: #718096;
+  }
+  
+  .category-icon {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+  
+  .priority-high {
+    color: #e53e3e;
+    font-weight: bold;
+  }
+  
+  .priority-normal {
+    color: #3182ce;
+  }
+  
+  .priority-low {
+    color: #718096;
+  }
+  
+  .delete-button {
+    padding: 8px 16px;
+    background-color: #fed7d7;
+    color: #e53e3e;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .delete-button:hover {
+    background-color: #feb2b2;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .task-list-container {
+      padding: 16px;
+      max-width: 100%;
+    }
+    
+    .task-table th,
+    .task-table td {
+      padding: 12px 8px;
+    }
+    
+    .task-name {
+      font-size: 16px;
+    }
+    
+    .task-notes {
+      font-size: 12px;
+    }
+  }

@@ -1,0 +1,233 @@
+/* Events and Programs Styles */
+
+.events-container {
+    padding: 24px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .events-heading {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #2c5282;
+  }
+  
+  .events-scroll-container {
+    overflow-x: auto;
+    padding: 16px 0;
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .events-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .events-row {
+    display: flex;
+    gap: 24px;
+    padding: 8px 4px;
+    min-width: min-content;
+  }
+  
+  .event-card {
+    width: 320px;
+    min-width: 320px;
+    background-color: #f7fafc;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    border-top: 6px solid #4299e1;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease-out;
+  }
+  
+  .event-card.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .event-category-icon {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background-color: #ebf8ff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 16px;
+    padding-right: 40px;
+  }
+  
+  .event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .event-detail {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+  }
+  
+  .event-detail-icon {
+    margin-right: 8px;
+    width: 20px;
+    text-align: center;
+  }
+  
+  .event-detail-text {
+    color: #4a5568;
+  }
+  
+  .event-description {
+    font-size: 16px;
+    color: #4a5568;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 12px;
+  }
+  
+  .event-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .registration-badge {
+    background-color: #fed7aa;
+    color: #c05621;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .open-badge {
+    background-color: #c6f6d5;
+    color: #2f855a;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .details-button {
+    background-color: #4299e1;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .details-button:hover {
+    background-color: #3182ce;
+  }
+  
+  .scroll-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    color: #718096;
+    font-size: 16px;
+    animation: pulse 2s infinite;
+  }
+  
+  .scroll-text {
+    margin-right: 8px;
+  }
+  
+  .scroll-arrow {
+    font-size: 20px;
+  }
+  
+  /* Card hover effect */
+  .event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  /* Category-specific top border colors */
+  .event-card[data-category="exercise"] {
+    border-top-color: #48bb78;
+  }
+  
+  .event-card[data-category="education"] {
+    border-top-color: #4299e1;
+  }
+  
+  .event-card[data-category="entertainment"] {
+    border-top-color: #ed8936;
+  }
+  
+  .event-card[data-category="social"] {
+    border-top-color: #9f7aea;
+  }
+  
+  .event-card[data-category="hobby"] {
+    border-top-color: #38b2ac;
+  }
+  
+  /* Animations */
+  @keyframes pulse {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .events-container {
+      padding: 16px;
+    }
+    
+    .event-card {
+      width: 280px;
+      min-width: 280px;
+    }
+    
+    .event-title {
+      font-size: 20px;
+    }
+    
+    .event-detail, .event-description {
+      font-size: 14px;
+    }
+    
+    .details-button {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  }

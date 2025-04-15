@@ -1,0 +1,30 @@
+.chart-button {
+    padding: 8px 16px;
+    margin: 0 8px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .chart-button.active {
+    background-color: #2563eb; /* Blue-600 */
+    color: #ffffff;
+  }
+  
+  .chart-button.inactive {
+    background-color: #e5e7eb; /* Gray-200 */
+    color: #374151; /* Gray-700 */
+  }
+  
+  .chart-button:hover {
+    background-color: #1d4ed8; /* Darker blue for hover effect */
+    color: #ffffff;
+  }
+  
+  .chart-button:active {
+    background-color: #1e40af; /* Even darker blue on click */
+  }
+  

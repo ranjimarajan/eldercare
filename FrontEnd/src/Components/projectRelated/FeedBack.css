@@ -1,0 +1,75 @@
+.feedback-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .feedback-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .feedback-card:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+  
+  .feedback-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .feedback-header h2 {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .feedback-header .date {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .feedback-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  .feedback-footer {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #888;
+    text-align: right;
+  }
+  
+  .no-feedback {
+    color: #999;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+  }
+  .milestone{
+    height: 30px;
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    color: white;
+  }
+  .milestone h2{
+    color: white;
+  }
+  .date h2{
+    color: red;
+  }

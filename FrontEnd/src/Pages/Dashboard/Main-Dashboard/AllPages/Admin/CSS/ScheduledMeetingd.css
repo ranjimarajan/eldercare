@@ -1,0 +1,256 @@
+/* Meetings Container */
+.meetings-container {
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Meetings Header */
+  .meetings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .meetings-header h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-icon {
+    margin-right: 10px;
+    font-size: 22px;
+    color: #4a6cf7;
+  }
+  
+  /* Meeting Stats */
+  .meeting-stats {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .stat-item {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .stat-icon {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  
+  .stat-icon.active {
+    color: #2ecc71;
+  }
+  
+  .stat-icon.upcoming {
+    color: #3498db;
+  }
+  
+  .stat-icon.completed {
+    color: #95a5a6;
+  }
+  
+  /* Table Container */
+  .meetings-table-container {
+    overflow-x: auto;
+  }
+  
+  /* Meetings Table */
+  .meetings-table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+  }
+  
+  .meetings-table th {
+    background-color: #f8f9fa;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 2px solid #eaeaea;
+  }
+  
+  .meetings-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+  }
+  
+  /* Meeting Title */
+  .meeting-title {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+  }
+  
+  .title-icon {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #95a5a6;
+  }
+  
+  .title-icon.active-icon {
+    color: #2ecc71;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Participants Cell */
+  .participants-cell {
+    display: flex;
+    align-items: center;
+  }
+  
+  .participants-icon {
+    margin-right: 8px;
+    color: #7f8c8d;
+  }
+  
+  /* Status Badge */
+  .status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .status-active {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+  }
+  
+  .status-upcoming {
+    background-color: rgba(52, 152, 219, 0.15);
+    color: #3498db;
+  }
+  
+  .status-completed {
+    background-color: rgba(149, 165, 166, 0.15);
+    color: #7f8c8d;
+  }
+  
+  /* Row Styling */
+  .meeting-row {
+    transition: all 0.2s ease;
+  }
+  
+  .meeting-row:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .meeting-row.active {
+    background-color: rgba(46, 204, 113, 0.05);
+  }
+  
+  /* Buttons */
+  .join-now-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  
+  .join-now-btn:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .details-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  
+  .details-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .view-btn {
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  
+  .view-btn:hover {
+    background-color: #7f8c8d;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive */
+  @media (max-width: 992px) {
+    .meetings-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .meeting-stats {
+      margin-top: 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .meetings-container {
+      padding: 15px;
+    }
+    
+    .meeting-stats {
+      flex-wrap: wrap;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .meetings-table td, .meetings-table th {
+      padding: 10px 8px;
+      font-size: 13px;
+    }
+    
+    .join-now-btn, .details-btn, .view-btn {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+  }

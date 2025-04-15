@@ -1,0 +1,210 @@
+/* AdminDashboard.css */
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  /* Dashboard Container */
+  .dashboard-container {
+    min-height: 100vh;
+  }
+  
+  /* Header Styles */
+  .dashboard-header {
+    background-color: #ffffff;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .dashboard-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .welcome-text {
+    color: #666;
+  }
+  
+  .notification-btn {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .avatar {
+    width: 36px;
+    height: 36px;
+    background-color: #4a6cf7;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  /* Main Content Styles */
+  .dashboard-main {
+    padding: 24px;
+  }
+  
+  /* Tab Styles */
+  .tab-container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  
+  .tab-button {
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .tab-button.active {
+    color: #4a6cf7;
+    border-bottom: 2px solid #4a6cf7;
+  }
+  
+  .tab-button:hover:not(.active) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Stats Styles */
+  .stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .stat-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .stat-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .stat-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 4px;
+  }
+  
+  .stat-value {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .stat-icon {
+    font-size: 24px;
+  }
+  
+  /* Activity Styles */
+  .activity-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  .activity-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .activity-item {
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .activity-item:last-child {
+    border-bottom: none;
+  }
+  
+  .activity-user {
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  
+  .activity-action {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .activity-time {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .view-all-btn {
+    margin-top: 16px;
+    background: none;
+    border: none;
+    color: #4a6cf7;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .view-all-btn:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .stats-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .tab-container {
+      overflow-x: auto;
+    }
+  }
