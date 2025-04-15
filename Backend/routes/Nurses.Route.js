@@ -20,6 +20,7 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     const nurses = await NurseModel.find();
+    console.log(nurses)
     res.status(200).send(nurses);
   } catch (error) {
     console.log(error);
@@ -132,9 +133,43 @@ router.post("/getAllTask", async (req, res) => {
     }
 
     const tasks = await TaskModal.find({ email });
+    console.log(tasks,"tasks--")
     res.status(200).json({ tasks });
   } catch (error) {
     console.error('Error fetching tasks:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+router.post("/updateStatus", async (req, res) => {
+  try {
+    const { id } = req.body;
+
+    
+    if (!id) {
+      return res.status(400).json({ message: 'Task ID is required' });
+    }
+
+    // Using findOneAndUpdate with proper syntax
+    const updatedTask = await TaskModal.findOneAndUpdate(
+      { id: id },
+      { $set: { status: "completed" } }, // Fixed syntax and typo in "completed"
+      { new: true } // Return the updated document
+    );
+    console.log(updatedTask,"updatedTask=-----------")
+    if (!updatedTask) {
+      return res.status(404).json({ message: 'Task not found' });
+    }
+    
+    console.log("updated task:", updatedTask);
+    
+    res.status(200).json({ 
+      success: true,
+      task: updatedTask 
+    });
+    
+  } catch (error) {
+    console.error('Error updating task status:', error);
     res.status(500).json({ message: 'Internal server error' });
   }
 });

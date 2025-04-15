@@ -58,14 +58,14 @@ function CareGiverDashboard() {
     e.preventDefault();
 
     if (BookAppoint.gender === "" || BookAppoint.department === "") {
-      return notify("Please fill all the Details");
+      
     }
     setLoading(true);
     
     // Simulating dispatch actions since we don't have the actual implementation
     // In a real app, you would use your actual dispatch functions
     setTimeout(() => {
-      notify("Appointment Booked");
+      
       setLoading(false);
       setBookAppoint(InitValue);
     }, 1500);
@@ -110,20 +110,48 @@ function CareGiverDashboard() {
         // Fetch patients
         const patientsResponse = await axios.get('http://localhost:5000/nurses');
         setPatients(patientsResponse.data);
-  
+        console.log(patientsResponse.data,"patientsResponse.data..")
         // Fetch tasks and map to the new structure
         const tasksResponse = await axios.get('http://localhost:5000/nurses/getFullTask');
         console.log(tasksResponse,"tasksResponse")
-        const formattedTasks = tasksResponse.data.tasks.map(task => ({
-          id: task._id,
-          patientName: task.name,
-          description: task.notes,
-          dueDate: task.time,
-          email: task.email,
-          phone: task.mobile || "123-456-7890", // Added default phone if not available
-          status: task.helpNeeded ? 'pending' : 'completed',
-          priority: task.priority === 'normal' ? 'medium' : task.priority
-        }));
+        const formattedTasks = tasksResponse.data.tasks.map(task => {
+          // Generate a random mobile number
+          const generateRandomMobile = () => {
+            const firstDigit = Math.floor(Math.random() * 4) + 6; // Start with 6, 7, 8, or 9
+            let mobileNumber = firstDigit.toString();
+            for (let i = 0; i < 9; i++) {
+              mobileNumber += Math.floor(Math.random() * 10);
+            }
+            return mobileNumber;
+          };
+        
+          // Check if education field has numbers
+          let educationValue = task.education;
+          if (educationValue) {
+            // Check if education contains any digits
+            const hasNumbers = /\d/.test(educationValue);
+            if (!hasNumbers) {
+              // No numbers found, add random mobile number
+              educationValue = educationValue + " " + generateRandomMobile();
+            }
+            // If it already has numbers, keep the original value
+          } else {
+            // If education is empty or undefined, just use a random mobile number
+            educationValue = generateRandomMobile();
+          }
+        
+          return {
+            id: task._id,
+            patientName: task.name,
+            description: task.notes,
+            dueDate: task.time,
+            email: task.email,
+            phone: task.mobile || "123456-7890", // Added default phone if not available
+            education: educationValue,
+            status: task.status ? 'pending' : 'completed',
+            priority: task.priority === 'normal' ? 'medium' : task.priority
+          };
+        });
         console.log(formattedTasks,"--------")
         setTasks(formattedTasks);
       } catch (error) {
@@ -452,10 +480,10 @@ function CareGiverDashboard() {
             <FaClipboardList /> <span>Daily Tasks</span>
           </button>
           <button 
-            className={`nav-item ${activeView === 'medications' ? 'active' : ''}`}
-            onClick={() => setActiveView('medications')}
+            className={`nav-item ${activeView === 'Blog' ? 'active' : ''}`}
+            onClick={() => setActiveView('Blog')}
           >
-            <FaPills /> <span>Medications</span>
+            <FaPills /> <span>Blog</span>
           </button>
           <button 
             className={`nav-item ${activeView === 'calendar' ? 'active' : ''}`}
@@ -501,6 +529,7 @@ function CareGiverDashboard() {
                           <th>Gender</th>
                           <th>Blood Group</th>
                           <th>address</th>
+                          <th>Family Contact</th>
                           <th>DOB</th>
                           <th>Actions</th>
                         </tr>
@@ -515,6 +544,7 @@ function CareGiverDashboard() {
                             <td>{patient.gender}</td>
                             <td>{patient.bloodGroup}</td>
                             <td>{patient.address}</td>
+                            <td>{patient.education}</td>
                             <td>{patient.DOB}</td>
                             <td className="action-buttons">
                               <a href={`https://wa.me/${patient.mobile}`} target="_blank" rel="noopener noreferrer" className="action-button whatsapp">
@@ -557,7 +587,7 @@ function CareGiverDashboard() {
                 <div className="tasks-view">
                   <div className="tasks-header">
                     <h3>Daily Tasks</h3>
-                    <div className="date-display">Friday, March 21, 2025</div>
+                    <div className="date-display"></div>
                   </div>
                   
                   <div className="tasks-grid">
@@ -611,7 +641,7 @@ function CareGiverDashboard() {
                 </div>
               )}
               
-              {activeView === 'medications' && (
+              {activeView === 'Blog' && (
                 <div className="placeholder-view">
                   <BlogAdd/>
                 </div>

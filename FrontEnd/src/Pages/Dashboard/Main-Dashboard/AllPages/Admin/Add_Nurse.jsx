@@ -180,10 +180,10 @@ const Add_Nurse = () => {
               
               <div className="form-row">
                 <div className="form-group">
-                  <label><BookOutlined /> Education</label>
+                  <label><BookOutlined /> Primary Contact</label>
                   <input
                     type="text"
-                    placeholder="Enter field of study (e.g. CSE)"
+                    placeholder="Enter Mobile Number of family member"
                     name="education"
                     value={NurseValue.education}
                     onChange={HandleDoctorChange}

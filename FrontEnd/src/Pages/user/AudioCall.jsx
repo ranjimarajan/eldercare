@@ -159,7 +159,7 @@ function AudioCall() {
                 <p className="status-text idle">Ready to connect with patient</p>
               )}
               {callStatus === 'calling' && (
-                <p className="status-text calling">Calling patient...</p>
+                <p className="status-text calling">Connecting...</p>
               )}
               {callStatus === 'connected' && (
                 <div>

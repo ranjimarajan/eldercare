@@ -42,7 +42,7 @@ function AppointMents() {
     setTimeout(async () => {
       try {
         // Make API call to update payment status
-      let responsePay =  await axios.post('http://localhost:5000/Viewappointments/update', {
+      let responsePay = await axios.post('http://localhost:5000/Viewappointments/update', {
           appointmentId: currentAppointment._id,
           paymentStatus: 'Paid',
           paymentMethod: 'UPI',
@@ -75,6 +75,11 @@ function AppointMents() {
     setUpiId('');
     setCurrentAppointment(null);
     setPaymentStatus('initial');
+  };
+
+  // Check if payment is already made, considering case sensitivity
+  const isPaymentDone = (paymentStatus) => {
+    return paymentStatus?.toLowerCase() === 'paid';
   };
 
   // Render different payment modal content based on status
@@ -146,7 +151,7 @@ function AppointMents() {
 
   return (
     <div className="appointments-container">
-      <h2>Appointments</h2>
+      <h2>Appointments..</h2>
       {appointments.length > 0 ? (
         <div className="appointments-table-container">
           <table className="appointments-table">
@@ -180,11 +185,11 @@ function AppointMents() {
                   <td>{appointment.gender}</td>
                   <td>
                     <button 
-                      className={`payment-btn ${appointment.payment === 'paid' ? 'paid' : ''}`}
+                      className={`payment-btn ${isPaymentDone(appointment.payment) ? 'paid' : ''}`}
                       onClick={() => handlePayNow(appointment)}
-                      disabled={appointment.payment === 'Paid'}
+                      disabled={isPaymentDone(appointment.payment)}
                     >
-                      {appointment.payment === 'paid' ? 'paid' : 'Pay Now'}
+                      {isPaymentDone(appointment.payment) ? 'Paid' : 'Pay Now'}
                     </button>
                   </td>
                 </tr>

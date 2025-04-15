@@ -8,6 +8,7 @@ const taskSchema = new mongoose.Schema({
   priority: { type: String, enum: ['low', 'normal', 'high'], default: 'normal' },
   helpNeeded: { type: Boolean, default: false },
   email: { type: String, required: true },
+  status :{type:String, default:""}
 }, { timestamps: true });
 
 const Task = mongoose.model('Task', taskSchema);

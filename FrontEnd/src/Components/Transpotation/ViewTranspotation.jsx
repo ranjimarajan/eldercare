@@ -39,7 +39,15 @@ function ViewTransportation() {
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${number}`;
     window.open(whatsappUrl, '_blank');
   };
+const callNow = ()=>{
+  try {
+    console.log("0")
 
+    window.open("http://localhost:3000/AudioCAll","_blank")
+  } catch (error) {
+    console.log(error)
+  }
+}
   return (
     <div className="container">
       <h1 className="page-title">Transportation Details</h1>
@@ -70,6 +78,12 @@ function ViewTransportation() {
                     onClick={() => openWhatsApp(item.number)}
                   >
                     WhatsApp
+                  </button>
+                  <button 
+                    className="whatsapp-button" 
+                    onClick={() => callNow(item.number)}
+                  >
+                    Call Now
                   </button>
                 </td>
               </tr>
