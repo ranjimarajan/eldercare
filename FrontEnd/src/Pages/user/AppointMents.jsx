@@ -180,11 +180,11 @@ function AppointMents() {
                   <td>{appointment.gender}</td>
                   <td>
                     <button 
-                      className={`payment-btn ${appointment.paymentStatus === 'Paid' ? 'paid' : ''}`}
+                      className={`payment-btn ${appointment.payment === 'paid' ? 'paid' : ''}`}
                       onClick={() => handlePayNow(appointment)}
                       disabled={appointment.payment === 'Paid'}
                     >
-                      {appointment.paymentStatus === 'Paid' ? 'Paid' : 'Pay Now'}
+                      {appointment.payment === 'paid' ? 'paid' : 'Pay Now'}
                     </button>
                   </td>
                 </tr>

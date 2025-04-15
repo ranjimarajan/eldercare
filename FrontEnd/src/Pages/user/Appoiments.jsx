@@ -141,6 +141,15 @@ function Appointments() {
       
     }
   }
+  const BookMarked = (()=>{
+    try {
+      console.log("0")
+
+      window.open("http://localhost:3000/AudioCAll","_blank")
+    } catch (error) {
+      console.log(error)
+    }
+  })
  
   return (
     <div className="appointment-page">
@@ -163,10 +172,10 @@ function Appointments() {
           <a className="btn-secondary" onClick={()=>vedioCall()}>Emergency Call</a>
 
           <p>Book an appointment with our specialists today and take the first step towards better health.</p>
-          <a href="#booking-form" className="btn-primary">Book Appointment</a>
+          {/* <a href="#booking-form" className="btn-primary">Book Appointment</a> */}
           <a href="#status-checker" className="btn-secondary">Check Status</a> &nbsp;
           <a href="#transpotation" className="btn-secondary">View Transpotations </a>&nbsp;
-          <a href="#" className="btn-secondary">Book Me Hospital </a>
+          <a href="#" className="btn-secondary" onClick={BookMarked}>Book Me Hospital </a>
 
         </div>
       </section>
@@ -252,178 +261,6 @@ function Appointments() {
           </div>
         )}
       </section>
-
-      {/* <section id="booking-form" className="booking-section">
-        <h2>Book Your Appointment</h2>
-        <p>Fill out the form below and we will get back to you within 24 hours.</p>
-
-        <form onSubmit={HandleOnsubmitAppointment} className="appointment-form">
-          <div className="form-row">
-            <div className="form-group">
-              <label>Patient Name</label>
-              <div className="inputdiv">
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  name="patientName"
-                  value={BookAppoint.patientName}
-                  onChange={HandleAppointment}
-                  required
-                />
-              </div>
-            </div>
-            <div className="form-group">
-              <label>Age</label>
-              <div className="inputdiv">
-                <input
-                  type="number"
-                  placeholder="Age"
-                  name="age"
-                  value={BookAppoint.age}
-                  onChange={HandleAppointment}
-                  required
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="form-row">
-            <div className="form-group">
-              <label>Gender</label>
-              <div className="inputdiv">
-                <select
-                  name="gender"
-                  value={BookAppoint.gender}
-                  onChange={HandleAppointment}
-                  required
-                >
-                  <option value="">Select Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-            </div>
-            <div className="form-group">
-              <label>Contact Number</label>
-              <div className="inputdiv">
-                <input
-                  type="number"
-                  placeholder="Phone Number"
-                  name="mobile"
-                  value={BookAppoint.mobile}
-                  onChange={HandleAppointment}
-                  required
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="form-row">
-            <div className="form-group">
-              <label>Email</label>
-              <div className="inputdiv">
-                <input
-                  type="email"
-                  placeholder="example@email.com"
-                  name="email"
-                  value={BookAppoint.email}
-                  onChange={HandleAppointment}
-                  required
-                />
-              </div>
-            </div>
-            <div className="form-group">
-              <label>Type of Disease</label>
-              <div className="inputdiv">
-                <select
-                  name="disease"
-                  value={BookAppoint.disease}
-                  onChange={HandleAppointment}
-                  required
-                >
-                  <option value="">Select Disease</option>
-                  {CommonProblem.map((ele, i) => (
-                    <option key={i} value={ele.title}>
-                      {ele.title}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div className="form-row">
-            <div className="form-group">
-              <label>Address</label>
-              <div className="inputdiv">
-                <input
-                  type="text"
-                  placeholder="Address line 1"
-                  name="address"
-                  value={BookAppoint.address}
-                  onChange={HandleAppointment}
-                  required
-                />
-              </div>
-            </div>
-            <div className="form-group">
-              <label>Department</label>
-              <div className="inputdiv">
-                <select
-                  name="department"
-                  value={BookAppoint.department}
-                  onChange={HandleAppointment}
-                  required
-                >
-                  <option value="">Select Department</option>
-                  <option value="Cardiology">Cardiology</option>
-                  <option value="Neurology">Neurology</option>
-                  <option value="ENT">ENT</option>
-                  <option value="Ophthalmologist">Ophthalmologist</option>
-                  <option value="Anesthesiologist">Anesthesiologist</option>
-                  <option value="Dermatologist">Dermatologist</option>
-                  <option value="Oncologist">Oncologist</option>
-                  <option value="Psychiatrist">Psychiatrist</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div className="form-row dateofAppointment">
-            <div className="form-group">
-              <label>Date</label>
-              <div className="inputdiv">
-                <input
-                  type="date"
-                  placeholder="Choose Date"
-                  name="date"
-                  value={BookAppoint.date}
-                  onChange={HandleAppointment}
-                  required
-                />
-              </div>
-            </div>
-            <div className="form-group">
-              <label>Time</label>
-              <div className="inputdiv">
-                <input
-                  type="time"
-                  placeholder="Choose Time"
-                  name="time"
-                  value={BookAppoint.time}
-                  onChange={HandleAppointment}
-                  required
-                />
-              </div>
-            </div>
-          </div>
-
-          <button type="submit" className="btn-submit">
-            {Loading ? "Loading..." : "Book Appointment"}
-          </button>
-        </form>
-      </section> */}
       <selection id="transpotation">
                     <UserTravel  appointmentStatus={appointmentStatus}/>
 
@@ -432,6 +269,14 @@ function Appointments() {
       <selection>
                   <CareHome />
       </selection>
+      {/* Back to Top Button */}
+<button 
+  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} 
+  className="back-to-top"
+  aria-label="Back to top"
+>
+  ↑
+</button>
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section">
@@ -457,7 +302,40 @@ function Appointments() {
       </footer>
 
       <style>{`
-        /* Reset and Base Styles */
+        /* Reset and Base Styles */.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #0056b3;
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    bottom: 20px;
+    left: 20px;
+  }
+}
         * {
           margin: 0;
           padding: 0;
